@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> <!-- Adicionei defer para garantir que o script é carregado após o HTML -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>  
+    <body>
+        <script>
+            // Verifica se o usuário está logado
+            const username = localStorage.getItem('loggedInUser');
+            if (!username) {
+                window.location.href = 'login.html'; // Redireciona para a página de login se não estiver logado
+            }
+        </script>
+    
+        <!-- O resto do seu código HTML -->
+    </body>
+    
+    <body onload="verificarLogin()">
+
+    <header id="header">
+        <h1 id="h1-header">Pizzaria</h1>
+        <h3 class="h3-header">Melhor Pizzaria</h3>
+        <nav id="navegação">
+            <a class="link-cabeçalho" href="#header">Home</a>
+            <a class="link-cabeçalho" href="#section-grid">Pizzas</a>
+            <a class="link-cabeçalho" href="#">Endereço</a>
+            <a class="link-cabeçalho" href="#" id="carrinho-link">Carrinho (<span id="carrinho-count">0</span>)</a> <!-- Contador de itens no carrinho -->
+        </nav>
+    </header>
+    
+    <br><br><br>
+    
+    <section class="section-1">
+        <h2 class="h2-section1">Promoções</h2>
+        <p class="p1">De quarta à sexta por R$ 20,00</p>
+        <p class="p2">Aproveite essa oferta</p>
+    </section>
+
+    <br><br><br>
+
+    <section class="section-2" id="section-grid">
+        <h2 id="Pizzas" class="h2-cardapio">Pizzas do nosso cardápio</h2>
+        
+        <!-- Barra de pesquisa -->
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Pesquise por pizzas..." onkeyup="searchPizzas()">
+        </div>
+        
+        <br>
+
+        <div class="grid">
+            <div class="sub-grid">
+                <h2 class="h2-sub-grid">Pizza de Calabresa</h2>
+                <img class="img-pizza" src="img/PizzaCalabresa.png" alt="Pizza de Calabresa">
+                <p class="p-preços">R$ 28,00</p>
+                <button class="botão-ação" onclick="adicionarAoCarrinho('Pizza de Calabresa', 28)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="sub-grid">
+                <h2 class="h2-sub-grid">Pizza de Brócolis</h2>
+                <img class="img-pizza" src="img/pizzabrocolis.png" alt="Pizza de Brócolis">
+                <p class="p-preços">R$ 30,00</p>
+                <button class="botão-ação" onclick="adicionarAoCarrinho('Pizza de Brócolis', 30)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="sub-grid">
+                <h2 class="h2-sub-grid">Pizza de Cogumelo</h2>
+                <img class="img-pizza" src="img/pizzacogumelo.png" alt="Pizza de Cogumelo">
+                <p class="p-preços">R$ 30,00</p>
+                <button class="botão-ação" onclick="adicionarAoCarrinho('Pizza de Cogumelo', 30)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="sub-grid">
+                <h2 class="h2-sub-grid">Pizza de Mussarela</h2>
+                <img class="img-pizza" src="img/PizzaQueijo.png" alt="Pizza de Queijo">
+                <p class="p-preços">R$ 29,00</p>
+                <button class="botão-ação" onclick="adicionarAoCarrinho('Pizza de Mussarela', 29)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="sub-grid">
+                <h2 class="h2-sub-grid">Pizza de Milho com Calabresa</h2>
+                <img class="img-pizza" src="img/milho_calabresa.png" alt="Pizza de Milho com Calabresa">
+                <p class="p-preços">R$ 31,00</p>
+                <button class="botão-ação" onclick="adicionarAoCarrinho('Pizza de Milho com Calabresa', 31)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="sub-grid">
+                <h2 class="h2-sub-grid">Pizza Portuguesa</h2>
+                <img class="img-pizza" src="img/portuguesa.jpg" alt="Pizza Portuguesa">
+                <p class="p-preços">R$ 32,00</p>
+                <button class="botão-ação" onclick="adicionarAoCarrinho('Pizza Portuguesa', 32)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        <br><br>
+    </section>
+    
+    <a class="botao-whatsapp" href="https://wa.me/11937079346?text=Olá, eu gostaria de pedir uma pizza">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <footer id="rodapé">
+        <p>Informações da Pizzaria</p>
+        <p>Email: contato@pizzaria.com</p>
+        <p>Telefone: (11) 93707-9346</p>
+        <p>CNPJ: 12.345.678/0001-99</p>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="modal-carrinho" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharCarrinho()">&times;</span>
+            <h2>Carrinho de Compras</h2>
+            <div id="itens-carrinho"></div>
+            <p>Total: R$ <span id="total-carrinho">0</span></p>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+
+</body>
+</html>

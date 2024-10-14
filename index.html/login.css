@@ -1,0 +1,79 @@
+body {
+    background-color: #ffa07a; /* Cor de fundo */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: red; /* Cor do container */
+    padding: 30px; /* Preenchimento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 350px; /* Largura do container */
+    text-align: center; /* Centraliza o texto */
+}
+
+h1 {
+    color: white; /* Cor do título */
+    margin-bottom: 20px;
+    font-size: 28px; /* Tamanho da fonte */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: white; /* Cor do label */
+    margin-bottom: 5px;
+    font-weight: bold; /* Negrito */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Preenchimento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    border: none; /* Remove a borda padrão */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+button {
+    width: 100%; /* Largura total */
+    padding: 10px;
+    background-color: #ffa07a; /* Cor do botão */
+    border: none; /* Remove a borda padrão */
+    color: red; /* Cor do texto do botão */
+    font-size: 18px; /* Tamanho da fonte do botão */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    border-radius: 4px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+button:hover {
+    background-color: #ff4500; /* Cor do botão ao passar o mouse */
+}
+
+.error-message {
+    color: red; /* Cor da mensagem de erro */
+    margin-top: 15px;
+}
+
+.register-link {
+    margin-top: 20px; /* Espaçamento superior */
+    color: white; /* Cor do texto do link */
+}
+
+.register-link a {
+    color: #ffa07a; /* Cor do link de cadastro */
+    text-decoration: underline; /* Sublinhado */
+}
+
+.register-link a:hover {
+    color: #ff4500; /* Cor do link ao passar o mouse */
+}
